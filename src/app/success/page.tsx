@@ -1,4 +1,4 @@
-export default function SuccessPage({
+export default async function SuccessPage({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
