@@ -1,8 +1,8 @@
 
 export default async function SuccessPage({
-  searchParams = {},
+  searchParams,
 }: {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const fileUrl =
     typeof searchParams.file_url === "string" ? searchParams.file_url : undefined;
@@ -41,3 +41,4 @@ export default async function SuccessPage({
 }
 
 export const dynamic = "force-dynamic";
+
