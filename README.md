@@ -81,11 +81,6 @@ A next-generation web platform for Safwan M P, fitness influencer and trainer. B
 
 ---
 
-## 📸 Screenshots
-
-> Add screenshots of the public page, admin dashboard, and Stripe checkout here.
-
----
 
 ## 📄 License
 
