@@ -1,14 +1,15 @@
+
 export default async function SuccessPage({
-  searchParams,
+  searchParams = {},
 }: {
   searchParams?: { [key: string]: string | string[] | undefined };
 }) {
   const fileUrl =
-    typeof searchParams?.file_url === "string" ? searchParams.file_url : undefined;
+    typeof searchParams.file_url === "string" ? searchParams.file_url : undefined;
   const link =
-    typeof searchParams?.link === "string" ? searchParams.link : undefined;
+    typeof searchParams.link === "string" ? searchParams.link : undefined;
   const type =
-    typeof searchParams?.type === "string" ? searchParams.type : undefined;
+    typeof searchParams.type === "string" ? searchParams.type : undefined;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
