@@ -1,9 +1,7 @@
-"use client";
-
 export default function SuccessPage({
   searchParams,
 }: {
-  searchParams: Record<string, string | string[] | undefined>;
+  searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const fileUrl =
     typeof searchParams.file_url === "string" ? searchParams.file_url : undefined;
