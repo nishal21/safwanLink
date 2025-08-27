@@ -1,11 +1,16 @@
-
 "use client";
 
-
-export default function SuccessPage({ searchParams }: { searchParams: { file_url?: string; link?: string; type?: string } }) {
-  const fileUrl = searchParams.file_url;
-  const link = searchParams.link;
-  const type = searchParams.type;
+export default function SuccessPage({
+  searchParams,
+}: {
+  searchParams: Record<string, string | string[] | undefined>;
+}) {
+  const fileUrl =
+    typeof searchParams.file_url === "string" ? searchParams.file_url : undefined;
+  const link =
+    typeof searchParams.link === "string" ? searchParams.link : undefined;
+  const type =
+    typeof searchParams.type === "string" ? searchParams.type : undefined;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -13,7 +18,7 @@ export default function SuccessPage({ searchParams }: { searchParams: { file_url
       <p className="mb-2">Thank you for your purchase.</p>
       {!fileUrl && !link ? (
         <p>No download or link was provided for this item.</p>
-      ) : (type === 'file' || (!type && fileUrl)) ? (
+      ) : type === "file" || (!type && fileUrl) ? (
         <a
           href={fileUrl}
           target="_blank"
@@ -22,7 +27,7 @@ export default function SuccessPage({ searchParams }: { searchParams: { file_url
         >
           Download File
         </a>
-      ) : (type === 'link' || (!type && link)) ? (
+      ) : type === "link" || (!type && link) ? (
         <a
           href={link}
           target="_blank"
@@ -36,4 +41,4 @@ export default function SuccessPage({ searchParams }: { searchParams: { file_url
   );
 }
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
