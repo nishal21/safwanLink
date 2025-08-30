@@ -1,15 +1,17 @@
 
-export default async function SuccessPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function SuccessPage({ searchParams }: Props) {
+  const resolvedSearchParams = await searchParams;
   const fileUrl =
-    typeof searchParams.file_url === "string" ? searchParams.file_url : undefined;
+    typeof resolvedSearchParams?.file_url === "string" ? resolvedSearchParams.file_url : undefined;
   const link =
-    typeof searchParams.link === "string" ? searchParams.link : undefined;
+    typeof resolvedSearchParams?.link === "string" ? resolvedSearchParams.link : undefined;
   const type =
-    typeof searchParams.type === "string" ? searchParams.type : undefined;
+    typeof resolvedSearchParams?.type === "string" ? resolvedSearchParams.type : undefined;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
@@ -41,4 +43,3 @@ export default async function SuccessPage({
 }
 
 export const dynamic = "force-dynamic";
-
