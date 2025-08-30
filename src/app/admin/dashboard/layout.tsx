@@ -32,16 +32,4 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   }
 
   return <>{children}</>;
-  return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="https://igjphytreikmiivddqxh.supabase.co/storage/v1/object/public/content-files/1.svg" type="image/jpeg" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
 }
